@@ -1,9 +1,11 @@
+// LESSON:1 INTRODUCTION DOM
 const welcomeMessage = () => {
     const today = new Date().toDateString();
     document.getElementById('welcomeMessage').textContent = `🤸🏾‍♀️ Welcome to Your Fitness Tracker 🥗 Today is ${today}`;
 };
 welcomeMessage();
 
+// LESSON:2 SELECTING AND MANIPULATING ELEMENTS
 const displayWorkoutRoutine = () => {
     const workoutInput = document.querySelector('#workoutInput').value;
     const workoutList = document.querySelector('#workoutList');
@@ -18,7 +20,7 @@ document.querySelector('#submitWorkout').addEventListener('click', displayWorkou
 // Function to add new fitness goals and remove completed ones
 // NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
 
-const addNewGoal = () => {
+const addNewGoal = () => {   // The FUNCTION // This was new to me!
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
     
@@ -39,12 +41,35 @@ const addNewGoal = () => {
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
+
+
+    // Adding Event Listener to remove a goal when done.
+    newGoal.addEventListener('click', () => {
+        goalList.removeChild(newGoal);
+    });
+
 };
+
+// Create an Array
+const newGoals = [];
+
+// Create an Iterator
+const goalList = fruits.entries();
+
+// List the Entries
+let newGoal = "";
+for (let x of list) {
+    newGoal += x + "<br>";
+}
+document.querySelector('#goalList').textContent = newGoal;
+
+
+
 
 // Add event listener to the goal submit button
 document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
 
-///
+/// LESSON 4 
 let waterIntake = 0;
 const updateWaterIntake = (change) => {
     waterIntake += change;
@@ -54,6 +79,10 @@ const updateWaterIntake = (change) => {
 document.querySelector('#increaseWater').addEventListener('click', () => updateWaterIntake(1));
 document.querySelector('#decreaseWater').addEventListener('click', () => updateWaterIntake(-1));
 
+
+
+
+// LESSON 5
 const updateProgressCharts = () => {
     document.querySelector('#workoutProgress').textContent = "Updated workout progress...";
     document.querySelector('#calorieIntakeProgress').textContent = "Updated calorie intake progress...";
@@ -61,12 +90,20 @@ const updateProgressCharts = () => {
 
 updateProgressCharts();
 
+
+
+
+// LESSON 6
 const toggleTheme = () => {
     document.body.classList.toggle('dark-theme');
 };
 
 document.querySelector('#themeToggle').addEventListener('click', toggleTheme);
 
+
+
+
+// LESSON 7
 const submitMealPlan = (event) => {
     event.preventDefault(); 
     alert('Meal plan submitted successfully! 🍴');
