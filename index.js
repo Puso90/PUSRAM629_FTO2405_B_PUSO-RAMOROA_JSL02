@@ -38,32 +38,35 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
     // The event listener that removes goals when clicked is not related to this issue.
     // Focus on preventing duplicates for now.
     
+     //goals = ["Banana", "Orange", "Apple", "Mango"];
+
+       
+        // Tried to create some sort of logic from array
+        // List the Entries
+        // However, I am very confused
+        // tool this from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_entries
+         newGoal = goalInput;
+        for (let x of goalList) {
+        if (newGoal += x + "<br>") {
+            alert('Cannot enter existing goal');
+        } else {
+            return true;
+        }
+    }
+
     const newGoal = document.createElement('li');
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
 
 
     // Adding Event Listener to remove a goal when done.
+    // Tried to create new remove button element from JS
+    const removeBtn = document.createElement(button)
     newGoal.addEventListener('click', () => {
         goalList.removeChild(newGoal);
     });
 
 };
-
-// Create an Array
-const newGoals = [];
-
-// Create an Iterator
-const goalList = fruits.entries();
-
-// List the Entries
-let newGoal = "";
-for (let x of list) {
-    newGoal += x + "<br>";
-}
-document.querySelector('#goalList').textContent = newGoal;
-
-
 
 
 // Add event listener to the goal submit button
