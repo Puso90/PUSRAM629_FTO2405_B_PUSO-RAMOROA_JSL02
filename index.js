@@ -38,35 +38,39 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
     // The event listener that removes goals when clicked is not related to this issue.
     // Focus on preventing duplicates for now.
     
-     //goals = ["Banana", "Orange", "Apple", "Mango"];
+     //goals = ["Banana", "Orange", "Apple", "Mango"]; example for myself
 
-       
+        
         // Tried to create some sort of logic from array
         // List the Entries
         // However, I am very confused
         // tool this from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_entries
-         newGoal = goalInput;
+         
+        // For Loop to shuffle goal inputs | Reference from personal project using fisherYateShuffle
+        
+        
+/*
         for (let x of goalList) {
-        if (newGoal += x + "<br>") {
+        if (newGoal += x ) {
             alert('Cannot enter existing goal');
         } else {
             return true;
         }
-    }
+    }   */
 
     const newGoal = document.createElement('li');
-    newGoal.textContent = goalInput;
+    newGoal.textContent = [goalInput];
     goalList.appendChild(newGoal);
 
-
     // Adding Event Listener to remove a goal when done.
-    // Tried to create new remove button element from JS
-    const removeBtn = document.createElement(button)
+    // Tried to create new remove button element from JS but reverted back to click actual list
     newGoal.addEventListener('click', () => {
         goalList.removeChild(newGoal);
     });
 
 };
+
+
 
 
 // Add event listener to the goal submit button
