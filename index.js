@@ -68,9 +68,28 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
         goalList.removeChild(newGoal);
     });
 
+    
+ console.log(goalList);
+ console.log(newGoal);
+ console.log(goalInput);
+
 };
 
-
+for (let i = i >= goalList.length - 1; i++;) {
+    	
+     if (goalList[i] === newGoal[i]) {
+        // tried many variations here
+      alert('You cannot write matching goals');
+     break;
+     } else {
+        alert('kind of getting there');
+     }
+     
+ }; 
+ 
+// Tried many many variations of loops and is still not working well as should
+// Stoping them from submitting empty input fields | It was really annoying me.
+// However, please let me know WHY if I use 'goalInput.value.trim(), it does not run as should.
 
 
 // Add event listener to the goal submit button
