@@ -49,14 +49,14 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
         // For Loop to shuffle goal inputs | Reference from personal project using fisherYateShuffle
         
         
-/*
-        for (let x of goalList) {
-        if (newGoal += x ) {
-            alert('Cannot enter existing goal');
-        } else {
-            return true;
-        }
-    }   */
+    /*
+            for (let x of goalList) {
+            if (newGoal += x ) {
+                alert('Cannot enter existing goal');
+            } else {
+                return true;
+            }
+        }   */
 
     const newGoal = document.createElement('li');
     newGoal.textContent = [goalInput];
@@ -69,15 +69,17 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
     });
 
     
+
+    
  console.log(goalList);
  console.log(newGoal);
  console.log(goalInput);
 
 };
-
-for (let i = i >= goalList.length - 1; i++;) {
+// I am doing something very wrong here, do not know what it is
+for (let i = i < goalList.length - 1; i++;) {
     	
-     if (goalList[i] === newGoal[i]) {
+     if (goalList[i] === goalInput[i]) {
         // tried many variations here
       alert('You cannot write matching goals');
      break;
