@@ -48,7 +48,13 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
          
         // For Loop to shuffle goal inputs | Reference from personal project using fisherYateShuffle
         
-        
+        // Stoping them from submitting empty input fields | It was really annoying me.
+        if (goalInput ===  "") {
+            alert('You must type a goal first!');
+            return;
+        };
+
+       
     /*
             for (let x of goalList) {
             if (newGoal += x ) {
@@ -56,11 +62,22 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
             } else {
                 return true;
             }
-        }   */
+        }   
+    */
+
 
     const newGoal = document.createElement('li');
-    newGoal.textContent = [goalInput];
-    goalList.appendChild(newGoal);
+    // trying to select already submitted goals 
+ const insideGoal = document.querySelector('li');
+    // Something is missing and I do not know what it is
+    // It sends an alert but also let's the goal get subnitted
+    if (goalInput === insideGoal) {
+        !alert('Cannot submit duplicate goal');
+        return;
+    } else {
+        newGoal.textContent = goalInput;
+        goalList.appendChild(newGoal);
+    }
 
     // Adding Event Listener to remove a goal when done.
     // Tried to create new remove button element from JS but reverted back to click actual list
@@ -68,34 +85,40 @@ const addNewGoal = () => {   // The FUNCTION // This was new to me!
         goalList.removeChild(newGoal);
     });
 
+
     
+
+
 
     
  console.log(goalList);
  console.log(newGoal);
  console.log(goalInput);
+ console.log(insideGoal);
 
 };
-// I am doing something very wrong here, do not know what it is
+
+  
+/* I am doing something very wrong here, do not know what it is
 for (let i = i < goalList.length - 1; i++;) {
     	
-     if (goalList[i] === goalInput[i]) {
-        // tried many variations here
+    if (goalList[i] == newGoal[i]) {
+       // tried many variations here
       alert('You cannot write matching goals');
-     break;
-     } else {
-        alert('kind of getting there');
-     }
-     
- }; 
+       [i];
+    } else {
+       alert('kind of getting there');
+    };
+    
+}; */
  
 // Tried many many variations of loops and is still not working well as should
-// Stoping them from submitting empty input fields | It was really annoying me.
 // However, please let me know WHY if I use 'goalInput.value.trim(), it does not run as should.
 
 
 // Add event listener to the goal submit button
-document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
+// I have to switch this code off because it was submitting twice 
+//document.querySelector('#submitGoal').addEventListener('click', addNewGoal);
 
 /// LESSON 4 
 let waterIntake = 0;
